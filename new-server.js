@@ -14,8 +14,12 @@ const io = require('socket.io')(http)
 const routes = require("./src/routes");
 const cors = require('cors')
 
+const port = process.env.PORT || 3333;
+
 app.use(cors())
 app.use(express.json())
+
+http.listen(port, () => console.log(`server is running on port ${port}`));
 
 const users = {};
 
@@ -37,5 +41,3 @@ io.on('connection', socket => {
         io.to(data.to).emit('callAccepted', data.signal);
     })
 });
-
-http.listen(8000, () => console.log('server is running on port 8000'));
