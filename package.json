@@ -4,8 +4,8 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "node group-room.js",
-    "dev": "nodemon group-room.js"
+    "start": "node peer-to-peer.js",
+    "dev": "nodemon peer-to-peer.js"
   },
   "keywords": [],
   "author": "",
