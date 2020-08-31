@@ -10,8 +10,6 @@ const port = process.env.PORT || 3333
 const rooms = {};
 
 io.on("connection", socket => {
-    console.log(socket.id)
-    socket.emit("yourID", socket.id);
     socket.on("join room", roomID => {
         if (rooms[roomID]) {
             rooms[roomID].push(socket.id);
